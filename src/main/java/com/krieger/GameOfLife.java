@@ -7,7 +7,6 @@ import java.util.Map;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -17,6 +16,8 @@ import javafx.util.Duration;
 
 public class GameOfLife extends Application {
 
+            //x// configuration here //x//
+            //-------------------------//
     private static final int WIDTH = 5;
     private static final int HEIGHT = 5;
     private static final int BOARD_PIXEL_SIZE = 860; // this is the pixel size
@@ -36,11 +37,11 @@ public class GameOfLife extends Application {
 
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        board.initBoard(0.3);
+        board.initBoard(0.01);
 
         Pane root = new Pane();
         Scene scene = new Scene(root, BOARD_PIXEL_SIZE, BOARD_PIXEL_SIZE);
-        // Corrected path for CSS - ensure this path is correct for your system
+        
         scene.getStylesheets().add("file:///X:/vscode/cellularFX/cellular_automaton_fx/src/main/resources/com/krieger/gol.css");
 
         // Create a board with dead cells

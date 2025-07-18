@@ -41,7 +41,8 @@ public class Board {
         int[][] newBoard = new int[board.length][board.length];
         for(int x=0; x<board.length;x++) {
             for(int y=0; y<board.length;y++) {
-                newBoard[x][y] = getField(x, y); //Copy value into new board
+                //Copy value into new board
+                newBoard[x][y] = getField(x, y); 
                 checkBoard(x, y, newBoard);
             }
         }
