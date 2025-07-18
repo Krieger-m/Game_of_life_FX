@@ -1,0 +1,15 @@
+.root {
+    -fx-fill: rgb(67, 67, 67);
+}
+ 
+.alive-cell {
+    -fx-background-color: rgb(97, 172, 195);
+    -fx-border-color: black;
+    -fx-border-width: 0.0;
+}
+ 
+.dead-cell {
+    -fx-background-color: rgb(41, 41, 41);
+    -fx-border-color: black;
+    -fx-border-width: 0.0;
+}
