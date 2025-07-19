@@ -33,11 +33,11 @@ public class GameOfLife extends Application {
             public void handle(javafx.event.ActionEvent event) {
                 iterateBoard();
             }
-        }), new KeyFrame(Duration.millis(200)));
+        }), new KeyFrame(Duration.millis(100)));
 
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        board.initBoard(0.2);
+        board.initBoard(0.35);
 
         Pane root = new Pane();
         Scene scene = new Scene(root, BOARD_PIXEL_SIZE, BOARD_PIXEL_SIZE);
