@@ -20,7 +20,7 @@ public class GameOfLife extends Application {
             //-------------------------//
     private static final int WIDTH = 5;
     private static final int HEIGHT = 5;
-    private static final int BOARD_PIXEL_SIZE = 860; // this is the pixel size
+    private static final int BOARD_PIXEL_SIZE = 720; // this is the pixel size
     private static final int BOARD_LOGICAL_SIZE = BOARD_PIXEL_SIZE / WIDTH; // This is the logical cell count
 
     private Map<String, StackPane> boardMap = new HashMap<>();
@@ -33,15 +33,15 @@ public class GameOfLife extends Application {
             public void handle(javafx.event.ActionEvent event) {
                 iterateBoard();
             }
-        }), new KeyFrame(Duration.millis(100)));
+        }), new KeyFrame(Duration.millis(200)));
 
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        board.initBoard(0.01);
+        board.initBoard(0.2);
 
         Pane root = new Pane();
         Scene scene = new Scene(root, BOARD_PIXEL_SIZE, BOARD_PIXEL_SIZE);
-        
+
         scene.getStylesheets().add("file:///X:/vscode/cellularFX/cellular_automaton_fx/src/main/resources/com/krieger/gol.css");
 
         // Create a board with dead cells
