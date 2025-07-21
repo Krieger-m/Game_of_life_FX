@@ -44,19 +44,21 @@ public class GameOfLife extends Application {
 
         scene.getStylesheets().add("file:///X:/vscode/cellularFX/cellular_automaton_fx/src/main/resources/com/krieger/gol.css");
 
-        // Create a board with dead cells
-        for (int x = 0; x < BOARD_LOGICAL_SIZE; x ++) { // Iterate using logical board size
-            for (int y = 0; y < BOARD_LOGICAL_SIZE; y ++) { // Iterate using logical board size
+                    // Create a board with dead cells
+        for (int x = 0; x < BOARD_LOGICAL_SIZE; x ++) {             // Iterate using logical board size
+            for (int y = 0; y < BOARD_LOGICAL_SIZE; y ++) {             // Iterate using logical board size
                 StackPane cell = new StackPane();
-                cell.setLayoutX(x * WIDTH); // Position visually
-                cell.setLayoutY(y * HEIGHT); // Position visually
+                        // Position visually
+                cell.setLayoutX(x * WIDTH); 
+                        // Position visually
+                cell.setLayoutY(y * HEIGHT); 
                 cell.setPrefHeight(HEIGHT);
                 cell.setPrefWidth(WIDTH);
                 cell.getStyleClass().add("dead-cell");
                 root.getChildren().add(cell);
 
-                //Store the cell in a HashMap for fast access
-                //Use logical coordinates for the key
+                            //Store the cell in a HashMap for fast access
+                            //Use logical coordinates for the key
                 boardMap.put(x + "," + y, cell); 
             }
         }
@@ -72,12 +74,12 @@ public class GameOfLife extends Application {
         board.nextPopulation();
         for (int x = 0; x < board.getSize(); x++) {
             for (int y = 0; y < board.getSize(); y++) {
-                // Retrieve using the same logical coordinates as stored
+                            // Retrieve using the same logical coordinates as stored
                 StackPane pane = boardMap.get(x + "," + y); 
-                if (pane != null) { // Added a null check just in case
+                if (pane != null) {            // Added a null check just in case
                     pane.getStyleClass().clear();
-                    // If the cell at (x,y) is a alive use css styling 'alive-cell'
-                    // otherwise use the styling 'dead-cell'.
+                                // If the cell at (x,y) is a alive use css styling 'alive-cell'
+                                // otherwise use the styling 'dead-cell'.
                     if (board.getField(x, y) == 1) {
                         pane.getStyleClass().add("alive-cell");
                     } else {
