@@ -18,8 +18,8 @@ public class GameOfLife extends Application {
 
             //x// configuration here //x//
             //-------------------------//
-    private static final int WIDTH = 5;
-    private static final int HEIGHT = 5;
+    private static final int WIDTH = 4;
+    private static final int HEIGHT = 4;
     private static final int BOARD_PIXEL_SIZE = 720; // this is the pixel size
     private static final int BOARD_LOGICAL_SIZE = BOARD_PIXEL_SIZE / WIDTH; // This is the logical cell count
 
@@ -37,7 +37,8 @@ public class GameOfLife extends Application {
 
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        board.initBoard(0.35);
+                // Population density
+        board.initBoard(0.3);
 
         Pane root = new Pane();
         Scene scene = new Scene(root, BOARD_PIXEL_SIZE, BOARD_PIXEL_SIZE);
