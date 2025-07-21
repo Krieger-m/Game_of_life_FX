@@ -42,7 +42,7 @@ public class GameOfLife extends Application {
         Pane root = new Pane();
         Scene scene = new Scene(root, BOARD_PIXEL_SIZE, BOARD_PIXEL_SIZE);
 
-        scene.getStylesheets().add("file:///X:/vscode/cellularFX/cellular_automaton_fx/src/main/resources/com/krieger/gol.css");
+        scene.getStylesheets().add(getClass().getResource("/com/krieger/gol.css").toExternalForm());
 
                     // Create a board with dead cells
         for (int x = 0; x < BOARD_LOGICAL_SIZE; x ++) {             // Iterate using logical board size
