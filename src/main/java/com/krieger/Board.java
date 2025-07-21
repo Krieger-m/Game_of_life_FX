@@ -54,7 +54,8 @@ public class Board {
         int[] indexY = {1 ,1 ,1 ,0 ,0 ,-1,-1,-1};
  
         int fieldValue = board[x][y];
- 
+
+            // Survival-rules are set here, represents the original GOL ruleset
         int neighbours = 0;
         for(int i=0;i<8;i++) {
             if(x+indexX[i]>=0 && y+indexY[i]>=0 && x+indexX[i]<board.length && y+indexY[i]<board.length) {
@@ -63,25 +64,25 @@ public class Board {
         }
  
         if(fieldValue==0 && neighbours==3) {
-            //setField(x, y, 1); // Reborn with three alive neighbours
+               //setField(x, y, 1); // Reborn with three alive neighbours
             newBoard[x][y] = 1;
             return;
         }
  
         if(fieldValue==1 && neighbours<2) {
-            //setField(x, y, 0); //Less than two alive neightours die
+                //setField(x, y, 0); //Less than two alive neightours die
             newBoard[x][y] = 0;
             return;
         }
  
  
         if(fieldValue==1 && (neighbours==2 || neighbours==3)) {
-            // Stay alive if two or three alive neighbours
+                // Stay alive if two or three alive neighbours
             return;
         }
  
         if(fieldValue==1 && neighbours>3) {
-            //setField(x, y, 0); //Die if more than three alive neighbours
+                //setField(x, y, 0); //Die if more than three alive neighbours
             newBoard[x][y] = 0;
             return;
         }
